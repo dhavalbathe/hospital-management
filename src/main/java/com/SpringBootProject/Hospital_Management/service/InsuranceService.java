@@ -27,4 +27,12 @@ public class InsuranceService {
 
         return patient;
     }
+
+    public Patient disaccociateInsurance(Long patientId) {
+        Patient patient = patientRepository.findById(patientId).orElseThrow();
+
+        patient.setInsurance(null);
+
+        return patient;
+    }
 }
